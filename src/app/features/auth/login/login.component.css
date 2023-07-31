@@ -1,0 +1,74 @@
+.logingClass {
+    background-image: url('/assets/loginV.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 91%;
+    display: flex;
+    flex-direction: column; /* Added to stack the items vertically */
+    justify-content: center;
+    align-items: center;
+}
+.logingClass h1 {
+    font-size: 36px; /* Adjust the font size as needed */
+    color: #fff; /* Set the text color */
+    margin-bottom: 20px; /* Add some space between the h1 and the form */
+}
+
+.loginForm {
+    height: 50%;
+    width: 30%;
+    /* Set the maximum width of the form */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* CSS styles for the form labels */
+.loginForm label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* CSS styles for the form inputs */
+.loginForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* CSS styles for the error messages */
+.error-message {
+    color: #ff0000;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* CSS styles for the buttons */
+.loginForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+.loginForm button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* CSS styles for the "Sign up" link */
+.register-link {
+    text-align: center;
+}

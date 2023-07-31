@@ -1,0 +1,11 @@
+  .homeViewv {
+    position:relative;
+    width: 100%;
+    height: 91%;
+    background-image: url('/assets/gotTwo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+

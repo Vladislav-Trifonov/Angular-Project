@@ -1,0 +1,52 @@
+<div class="logingClass"> 
+
+<h1>Welcome back to Westeros</h1>
+
+
+<form class="loginForm" #loginForm="ngForm" (ngSubmit)="onLoginHandler(loginForm)">
+
+  <!-- EMAIL -->
+  <div>
+    <label for="email">Email address</label>
+    <input ngModel #email="ngModel" name="email" id="email" autofocus placeholder="username@gmail.com" required
+      pattern="^[a-zA-Z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$" />
+
+    <!-- EMAIL ERRORS -->
+    <ng-container *ngIf="email.invalid && email.touched">
+      <div *ngIf="email.errors?.['required']">Email is required 
+      </div>
+      <div *ngIf="email.errors?.['pattern']">Email must be in format username@gmail.com
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- PASSWORD -->
+  <div>
+    <label for="password">Password</label>
+    <input ngModel #password="ngModel" type="password" name="password" id="password" placeholder="******" required
+      minlength="6" />
+
+    <!-- PASSWORD ERRORS -->
+    <ng-container *ngIf="password.invalid && password.touched">
+      <div *ngIf="password.errors?.['required']">Password is required 
+      </div>
+      <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long 
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- BUTTONS -->
+  <button [disabled]="loginForm.invalid" type="submit">Sign in
+  </button>
+
+  <!-- SERVER ERROR -->
+  <div *ngIf="errorMessage">{{ errorMessage }} 
+  </div>
+
+  <!-- REGISTER REDIRECT -->
+  <p>Don't have an account yet?
+    <a routerLink="/register">Sign up</a>
+  </p>
+</form>
+
+</div>

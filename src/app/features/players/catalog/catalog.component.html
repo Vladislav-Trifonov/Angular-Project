@@ -1,0 +1,37 @@
+<section class="episodesSection">
+
+  <!-- SERVER ERROR -->
+  <div *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <ng-container *ngIf="episodes; else loading">
+    <ng-container *ngIf="episodes.length > 0; else noPlayers">
+      <ng-container *ngFor="let episode of episodes">
+        
+        <div class="episodeTemplate">
+          <div>
+            <img src="{{ episode.image }}" alt="{{ episode.name }}" />
+          </div>
+          <h5>Episode Name: {{ episode.name }}</h5>
+          <div class="content">
+            <p class="releaseDate">Release Date: {{ episode.date }}</p>
+              <a [routerLink]="['/players', 'details', episode._id]" class="details">Details</a>           
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+
+  <!-- NO RESULTS -->
+  <ng-template #noPlayers>
+    <h1>
+      There are no episodes added yet!
+    </h1>
+  </ng-template>
+
+  <!-- LOADER -->
+  <ng-template #loading>
+    <app-loader></app-loader>
+  </ng-template>
+</section>

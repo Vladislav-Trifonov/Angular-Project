@@ -1,0 +1,26 @@
+.page-not-found {
+    position: relative;
+    width: 100%;
+    height: 91%;
+    background-image: url('/assets/page-not-found.webp'); 
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    overflow: hidden;
+}
+
+.page-not-found a {
+    margin-top: 20px;
+    font-size: 33px;
+    color: white;
+    border: 2px solid #fff; /* Add border to the anchor element */
+    padding: 10px 20px; /* Add some padding to make it visually appealing */
+    text-decoration: none; /* Remove default underline */
+    font-size: 23px; /* Adjust font size as needed */
+}
+
+.page-not-found a:hover {
+    background-color: red; 
+}

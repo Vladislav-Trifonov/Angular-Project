@@ -1,0 +1,22 @@
+header {
+    background-color: #333;
+    padding: 10px;
+  }
+
+  /* CSS styles for the navigation bar */
+  nav {
+    display: flex;
+    justify-content: left;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    flex-grow: 1; /* Make the buttons grow to fill the available space */
+    text-align: center; /* Center the text inside the buttons */
+  }
+
+  nav a:hover {
+    background-color: #555;
+  }
