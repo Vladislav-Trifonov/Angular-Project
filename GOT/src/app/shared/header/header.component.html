@@ -1,0 +1,18 @@
+<header>
+  <nav>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/episodes" routerLinkActive="active">Episodes</a>
+    <a routerLink="/search" routerLinkActive="active">Search</a>
+    <ng-container *ngIf="isLogged">
+      <a routerLink="/create" routerLinkActive="active">Create</a>
+      <a routerLink="/profile" routerLinkActive="active">Profile</a>
+      <a (click)="logout()">Logout</a>
+    </ng-container>
+    <ng-container *ngIf="!isLogged">
+      <a routerLink="/login" routerLinkActive="active">Login</a>
+      <a routerLink="/register" routerLinkActive="active">Register</a>
+    </ng-container>
+  </nav>
+</header>
+
+
