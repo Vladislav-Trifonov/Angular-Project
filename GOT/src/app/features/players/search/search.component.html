@@ -1,59 +1,56 @@
 <div class="search">
-    <form #searchForm="ngForm" (submit)="onSearchHandler(searchForm)">
-      <div>
-        <div>
-          <input
+    <form #searchForm="ngForm" (submit)="onSearchHandler(searchForm)" class="searchBox">
+        <input class="searchInput"
             ngModel
             #search="ngModel"
             type="search"
             name="search"
-            placeholder="Search"/>
+            placeholder="Episode name"/>
 
-          <button>Search</button>
-        </div>
-      </div>
+        <button class="searchButton">
+            Search
+        </button>
     </form>
-  </div>
 
-  <section class="searchSection episodesSection"> <!-- Add episodesSection class to the section -->
-    <div *ngIf="errorMessage">
-        {{ errorMessage }}
-    </div>
+    <section class="searchSection">
+        <div *ngIf="errorMessage">
+            {{ errorMessage }}
+        </div>
 
-    <ng-container *ngIf="episodes">
-        <ng-container *ngIf="episodes.length > 0; else noPlayers">
-            <ng-container *ngFor="let episode of episodes">
-                <!-- PLAYER CARD -->
-                <div class="episodeTemplate"> <!-- Add episodeTemplate class to the div -->
-                    <div>
-                        <img src="{{ episode.image }}" alt="{{ episode.name }}" />
-                    </div>
-                    <div class="episodeTemplate-content"> <!-- Add episodeTemplate-content class to the div -->
-                        <h5>
-                            Episode Name: {{ episode.name }}
-                        </h5>
-                        <p>
-                            Release Date: {{ episode.date }}
-                        </p>
-                        <a [routerLink]="['/players', 'details', episode._id]">
-                            Details
-                        </a>
-                    </div>
+        <ng-container *ngIf="episodes">
+            <ng-container *ngIf="episodes.length > 0; else noPlayers">
+                <div class="episodeContainer"> <!-- Add this div with class "episodeContainer" -->
+                    <ng-container *ngFor="let episode of episodes">
+                        <div class="episodeTemplate">
+                            <div>
+                                <img src="{{ episode.image }}" alt="{{ episode.name }}" />
+                            </div>
+                            <div class="episodeTemplate-content">
+                                <h5>
+                                    Episode Name: {{ episode.name }}
+                                </h5>
+                                <p>
+                                    Release Date: {{ episode.date }}
+                                </p>
+                                <a [routerLink]="['/players', 'details', episode._id]">
+                                    Details
+                                </a>
+                            </div>
+                        </div>
+                    </ng-container>
                 </div>
             </ng-container>
         </ng-container>
-    </ng-container>
 
-    <!-- NO RESULTS -->
-    <ng-template #noPlayers>
-        <h1 class="noEpisodes">
-            There are no episodes that match your search!
-        </h1>
-    </ng-template>
+        <ng-template #noPlayers>
+            <h1 class="noEpisodes">
+                There are no episodes that match your search! Please try again. 
+            </h1>
+        </ng-template>
 
-    <!-- LOADER -->
-    <ng-container *ngIf="isLoading">
-        <app-loader></app-loader>
-    </ng-container>
-</section>
+        <ng-container *ngIf="isLoading">
+            <app-loader></app-loader>
+        </ng-container>
+    </section>
+</div>
 

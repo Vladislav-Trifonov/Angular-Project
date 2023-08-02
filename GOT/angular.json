@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Game of Thrones": {
+    "GOT": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Game of Thrones:build:production"
+              "browserTarget": "GOT:build:production"
             },
             "development": {
-              "browserTarget": "Game of Thrones:build:development"
+              "browserTarget": "GOT:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,27 +72,12 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Game of Thrones:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
+            "browserTarget": "GOT:build"
           }
         }
+      },
+      "cli": {
+        "analytics": false
       }
     }
   },

@@ -1,5 +1,8 @@
 /* Apply Flexbox to the wrapper */
 .episodesSection {
+    background-image: url('/assets/westeros.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
