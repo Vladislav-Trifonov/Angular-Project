@@ -3,7 +3,7 @@ export const ENDPOINTS = {
   login: 'users/login',
   logout: 'users/logout',
   catalog: 'data/players?distinct=name&sortBy=name',
-  createPlayer: 'data/players',
+  addEpisode: 'data/players',
 	likePlayer: 'data/likes',
   details: (playerId: string) => `data/players/${playerId}`,
   edit: (playerId: string) => `data/players/${playerId}`,

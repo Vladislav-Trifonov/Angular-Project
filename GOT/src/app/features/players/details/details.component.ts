@@ -41,7 +41,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
     this.canLike$ = this.playerService.canLike(playerId, this.userId);
     initTE({ Modal });
     
-    this.subscribe$ = this.playerService.getPlayerById(playerId).subscribe({
+    this.subscribe$ = this.playerService.getEpisodeById(playerId).subscribe({
       next: (playerData) => {
         this.player = playerData;
         this.titleService.setTitle(this.player.name);

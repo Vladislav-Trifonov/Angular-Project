@@ -27,7 +27,7 @@ export class EditComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.titleService.setTitle('Edit');
     const playerId = this.route.snapshot.params['playerId'];
-    this.subscribe$ = this.playerService.getPlayerById(playerId).subscribe({
+    this.subscribe$ = this.playerService.getEpisodeById(playerId).subscribe({
       next: (playerData) => this.player = playerData,
       error: (error) => this.errorMessage = error.error.message
     });

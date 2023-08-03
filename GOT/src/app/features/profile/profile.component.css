@@ -1,28 +1,30 @@
-/* Apply Flexbox to the wrapper */
 .episodesSection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  
-.h1 {
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  height: 90.5%;
 }
 
-  .episodeTemplate {
-    width: 350px; /* Increase the width to make the cards bigger */
-    height: 400px; /* Increase the height */
-    margin: 10px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex; /* To align image and content vertically */
-    flex-direction: column; /* Change to row to position templates horizontally */
-  }
-  
+.h1 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.episodesWrapper { /* Add this */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.episodeTemplate {
+  width: 350px;
+  height: 400px;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
   /* Ensure the image scales properly within the "player card" */
   .episodeTemplate img {
     width: 100%; /* Adjust to the width of the container */
@@ -69,4 +71,22 @@
   
   .episodeTemplate a:hover {
     background-color: #0056b3;
+  }
+
+  .noAdded {
+
+    text-align: center;
+    font-size: 24px;
+    color: #666;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  }
+
+  .noAdded a {
+    text-decoration: underline;
+    color: #007bff;
   }

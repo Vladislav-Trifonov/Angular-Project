@@ -1,12 +1,12 @@
-<h1 class="h1">Episodes added by you</h1>
 <section class="episodesSection">
 
-
+  <h1 class="h1">Episodes added by you</h1>
   
   <div *ngIf="errorMessage">
     {{ errorMessage }}
   </div>
 
+  <div class="episodesWrapper">
   <ng-container *ngIf="episodes; else loading">
     <ng-container *ngIf="episodes.length > 0; else noPlayers">
       <ng-container *ngFor="let episode of episodes">
@@ -26,9 +26,10 @@
       </ng-container>
     </ng-container>
   </ng-container>
+</div>
 
   <ng-template #noPlayers>
-    <h1 class="noAdded">You still have not added any episodes. <a routerLink="/create">Add</a></h1>
+    <h1 class="noAdded">You still have not added any episodes. <a routerLink="/create">Add your first one here</a></h1>
   </ng-template>
 
 

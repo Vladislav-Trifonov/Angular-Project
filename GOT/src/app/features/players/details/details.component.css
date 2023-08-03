@@ -1,0 +1,69 @@
+.wholeSection {
+  width: 100%;
+  height: 90.5%;
+  background-image: url('/assets/details.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.episodeCard {
+  max-width: 700px;  /* Make card slightly bigger */
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px; /* Add padding */
+}
+
+.episodeCard h5 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: flex; /* Add flex */
+  justify-content: space-between; /* Align h5 and likes to left and right respectively */
+}
+
+.episodeCard img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.episodeCard p {
+  margin-bottom: 10px; /* Add space between the text for 'episode name, release date, description, rating' */
+}
+
+.ownerButtons a,
+.likeButtons a {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  background: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background .3s;
+}
+
+.ownerButtons {
+  display: flex; /* Add flex */
+  justify-content: space-between; /* Align Edit and Delete buttons to left and right respectively */
+}
+
+.ownerButtons a:hover,
+.likeButtons a:hover {
+  background: #0056b3;
+}
+
+.ownerButtons a:active,
+.likeButtons a:active {
+  background: #004080;
+}
+
+

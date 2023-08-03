@@ -5,7 +5,7 @@
   background-position: center;
   position: relative;
   width: 100%;
-  height: 96%;
+  height: 90.5%;
   display: flex;
   flex-direction: column;
   /* Added to stack the items vertically */
@@ -61,20 +61,16 @@
 /* Styles for the "episodeTemplate" divs */
 .episodeTemplate {
   width: 350px;
-  /* Increase the width to make the cards bigger */
   height: 400px;
-  /* Increase the height */
   margin: 10px;
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  /* To align image and content vertically */
   flex-direction: column;
-  /* Change to row to position templates horizontally */
   background-color: rgba(255, 255, 255, 0.8);
-  /* Use rgba with alpha to set transparency */
+
 }
 
 /* Styles for the image inside "episodeTemplate" */

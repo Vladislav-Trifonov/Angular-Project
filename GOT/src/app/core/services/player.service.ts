@@ -17,13 +17,13 @@ export class PlayerService {
     return this.http.get<EpisodeInterface[]>(url);
   }
 
-  getPlayerById(playerId: string): Observable<EpisodeInterface> {
+  getEpisodeById(playerId: string): Observable<EpisodeInterface> {
     const url = CONSTANTS.host + ENDPOINTS.details(playerId);
     return this.http.get<EpisodeInterface>(url);
   }
 
-  createPlayer(playerData: EpisodeInterface): Observable<EpisodeInterface> {
-    const url = CONSTANTS.host + ENDPOINTS.createPlayer;
+  addEpisode(playerData: EpisodeInterface): Observable<EpisodeInterface> {
+    const url = CONSTANTS.host + ENDPOINTS.addEpisode;
     return this.http.post<EpisodeInterface>(url, playerData);
   }
 

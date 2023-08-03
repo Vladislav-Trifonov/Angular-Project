@@ -32,7 +32,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     const userInput = formData.value;
     userInput._ownerId = userId;
     
-      this.subscribe$ = this.playerService.createPlayer(userInput).subscribe({
+      this.subscribe$ = this.playerService.addEpisode(userInput).subscribe({
         next: () => this.router.navigate(['/episodes']),
         error: (error) => this.errorMessage = error.error.message,
       });
