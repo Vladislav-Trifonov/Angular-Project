@@ -1,0 +1,60 @@
+<section class="editSection">
+
+<h1>Edit episode</h1>
+<form *ngIf="episode" class="md:space-y-6" #editForm="ngForm" (ngSubmit)="onEditHandler(editForm)" ngClass="editForm">
+
+
+  <div>
+    <label for="name">Name</label>
+    <input ngModel #name="ngModel" [(ngModel)]="episode.name" name="name" placeholder="Episode Name" required />
+
+
+    <ng-container *ngIf="name.invalid && name.touched">
+      <div *ngIf="name.errors?.['required']">Name is required</div>
+    </ng-container>
+  </div>
+
+
+  <div>
+    <label for="image">Image URL</label>
+    <input ngModel #image="ngModel" [(ngModel)]="episode.image" type="text" name="image" placeholder="Image URL" required>
+
+    <ng-container *ngIf="image.invalid && image.touched">
+      <div *ngIf="image.errors?.['required']">Image is required</div>
+    </ng-container>
+  </div>
+
+  <div>
+    <label for="date" class="block mb-1 text-base font-medium text-gray-900 dark:text-white">Release Date</label>
+    <input ngModel #date="ngModel" [(ngModel)]="episode.date" type="text" name="date" placeholder="Release Date" required />
+
+    <ng-container *ngIf="date.invalid && date.touched">
+      <div class="block text-sm font-medium text-gray-900 dark:text-white" *ngIf="date.errors?.['required']">Release Date is required</div>
+    </ng-container>
+  </div>
+
+
+  <div>
+    <label for="description">Description</label>
+    <input ngModel #description="ngModel" [(ngModel)]="episode.description" type="text" name="description" placeholder="Episode's description" required />
+
+    <ng-container *ngIf="description.invalid && description.touched">
+      <div *ngIf="description.errors?.['required']">Description is required</div>
+    </ng-container>
+  </div>
+
+  <div>
+    <label for="rating">Rating</label>
+    <input ngModel #rating="ngModel" [(ngModel)]="episode.rating" type="text" name="rating"
+      placeholder="Rating" required />
+
+    <ng-container *ngIf="rating.invalid && rating.touched">
+      <div *ngIf="rating.errors?.['required']">Rating is required</div>
+    </ng-container>
+  </div>
+
+  <button [disabled]="editForm.invalid" type="submit">Edit</button>
+
+  <div *ngIf="errorMessage">{{errorMessage }}</div>
+</form>
+</section>

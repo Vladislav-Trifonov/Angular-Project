@@ -5,13 +5,13 @@ import { isLoggedGuard } from './core/guards/is-logged.guard';
 import { isGuestGuard } from './core/guards/is-guest.guard';
 
 import { HomeComponent } from './features/home/home.component';
-import { SearchComponent } from './features/players/search/search.component';
-import { CatalogComponent } from './features/players/catalog/catalog.component';
+import { SearchComponent } from './features/episodes/search/search.component';
+import { CatalogComponent } from './features/episodes/catalog/catalog.component';
 import { LoginComponent } from './features/auth/login/login.component';
 import { RegisterComponent } from './features/auth/register/register.component';
-import { CreateComponent } from './features/players/create/create.component';
-import { DetailsComponent } from './features/players/details/details.component';
-import { EditComponent } from './features/players/edit/edit.component';
+import { CreateComponent } from './features/episodes/create/create.component';
+import { DetailsComponent } from './features/episodes/details/details.component';
+import { EditComponent } from './features/episodes/edit/edit.component';
 import { ProfileComponent } from './features/profile/profile.component';
 import { NotFoundComponent } from './features/not-found/not-found.component';
 
@@ -23,8 +23,8 @@ const routes: Routes = [
   { path: 'login', canActivate: [isGuestGuard], component: LoginComponent },
   { path: 'register', canActivate: [isGuestGuard] , component: RegisterComponent },
   { path: 'create', canActivate: [isLoggedGuard], component: CreateComponent },
-  { path: 'players/details/:playerId', component: DetailsComponent },
-  { path: 'players/edit/:playerId', canActivate: [isLoggedGuard], component: EditComponent },
+  { path: 'episodes/details/:episodeId', component: DetailsComponent },
+  { path: 'episodes/edit/:episodeId', canActivate: [isLoggedGuard], component: EditComponent },
   { path: 'profile', canActivate: [isLoggedGuard], component: ProfileComponent },
   { path: '**', component: NotFoundComponent },
 ];

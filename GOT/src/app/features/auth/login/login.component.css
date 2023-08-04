@@ -17,7 +17,7 @@
 }
 
 .loginForm {
-    height: 50%;
+    height: 40%;
     width: 30%;
     /* Set the maximum width of the form */
     padding: 20px;
@@ -72,3 +72,8 @@
 .register-link {
     text-align: center;
 }
+
+.loginForm p > a {
+    text-decoration: underline;
+    color: #007bff;
+  }

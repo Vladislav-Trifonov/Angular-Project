@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { EpisodeInterface } from 'src/app/core/interfaces/Episode';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { PlayerService } from 'src/app/core/services/player.service';
+import { EpisodeService } from 'src/app/core/services/episodes.service';
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   errorMessage!: string;
   
   constructor(
-    private playerService: PlayerService,
+    private EpisodeService: EpisodeService,
     private authService: AuthService,
     private titleService: Title
   ) {}
@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     const userId = this.authService.getUserData()?._id as string;
     this.titleService.setTitle(`Profile`);
 
-      this.subscribe$ = this.playerService.getMyPlayers(userId).subscribe({
+      this.subscribe$ = this.EpisodeService.personalEpisodes(userId).subscribe({
         next: (episodes) => (this.episodes = episodes),
         error: (error) => (this.errorMessage = error.error.message),
       });

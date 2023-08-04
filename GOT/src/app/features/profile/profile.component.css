@@ -1,7 +1,11 @@
 .episodesSection {
   display: flex;
   flex-direction: column;
-  height: 90.5%;
+  height: 93%;
+  background-image: url('/assets/dany.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
 .h1 {
@@ -10,7 +14,8 @@
   font-weight: bold;
 }
 
-.episodesWrapper { /* Add this */
+.episodesWrapper {
+  /* Add this */
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -24,69 +29,78 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
 }
-  /* Ensure the image scales properly within the "player card" */
-  .episodeTemplate img {
-    width: 100%; /* Adjust to the width of the container */
-    height: 200px; /* Set a fixed height for all images */
-    object-fit: cover; /* To maintain aspect ratio and fill the container */
-    border-radius: 8px;
-    margin-bottom: 10px; /* Add some space between the image and content */
-  }
-  
-  .episodeTemplate-content {
-    flex: 1; /* Allow the content to take up remaining space */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .content {
-    
-    margin-top: auto;
-  }
-  
-  .episodeTemplate h5 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .content p {
-    margin: 0;
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .content a {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .episodeTemplate a:hover {
-    background-color: #0056b3;
-  }
 
-  .noAdded {
+/* Ensure the image scales properly within the "player card" */
+.episodeTemplate img {
+  width: 100%;
+  /* Adjust to the width of the container */
+  height: 200px;
+  /* Set a fixed height for all images */
+  object-fit: cover;
+  /* To maintain aspect ratio and fill the container */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  /* Add some space between the image and content */
+}
 
-    text-align: center;
-    font-size: 24px;
-    color: #666;
-    margin: auto;
-    margin-top: 50px;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-  }
+.episodeTemplate-content {
+  flex: 1;
+  /* Allow the content to take up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .noAdded a {
-    text-decoration: underline;
-    color: #007bff;
-  }
+.content {
+
+  margin-top: auto;
+}
+
+.episodeTemplate h5 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.content p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.content a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.episodeTemplate a:hover {
+  background-color: #0056b3;
+}
+
+.noAdded {
+
+  text-align: center;
+  font-size: 24px;
+  color: #666;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.noAdded a {
+  text-decoration: underline;
+  color: #007bff;
+}

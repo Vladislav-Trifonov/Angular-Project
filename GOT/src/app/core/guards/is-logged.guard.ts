@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree, } from '@angular/router';
 
-import { CONSTANTS} from '../environments/constants';
+import { CONSTANTS } from '../environments/constants';
 
 @Injectable({ providedIn: 'root' })
 export class isLoggedGuard implements CanActivate {
