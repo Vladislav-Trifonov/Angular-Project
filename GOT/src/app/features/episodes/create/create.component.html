@@ -9,7 +9,11 @@
           <!-- NAME -->
           <div>
             <label for="name">Episode Name</label>
+<<<<<<< HEAD
             <input ngModel #name="ngModel" name="name" id="name" autofocus placeholder="Name" required min="4" />
+=======
+            <input ngModel #name="ngModel" name="name" id="name" autofocus placeholder="The Long Night" required min="4" />
+>>>>>>> d03d600 (Newest updtaes)
 
             <!-- NAME ERRORS -->
             <ng-container *ngIf="name.invalid && name.touched">
@@ -34,37 +38,37 @@
 
           <!-- AGE -->
           <div>
-            <label for="age">Release Date</label>
-            <input ngModel #age="ngModel" type="text" name="date" id="date" placeholder="Release Date" required />
+            <label for="date">Release Date</label>
+            <input ngModel #date="ngModel" type="text" name="date" id="date" placeholder="DD/MM/YYYY" required />
 
             <!-- AGE ERRORS -->
-            <ng-container *ngIf="age.invalid && age.touched">
-              <div *ngIf="age.errors?.['required']">Release date is required
+            <ng-container *ngIf="date.invalid && date.touched">
+              <div *ngIf="date.errors?.['required']">Release date is required
               </div>
             </ng-container>
           </div>
 
           <!-- POSITION -->
           <div>
-            <label for="position">Description</label>
-            <input ngModel #position="ngModel" type="text" name="description" id="description" list="description"
-              placeholder="Description" required />
+            <label for="description">Description</label>
+            <input ngModel #description="ngModel" type="text" name="description" id="description" list="description"
+              placeholder="One of the best episodes ever" required />
 
             <!-- POSITION ERRORS -->
-            <ng-container *ngIf="position.invalid && position.touched">
-              <div *ngIf="position.errors?.['required']">Description is required
+            <ng-container *ngIf="description.invalid && description.touched">
+              <div *ngIf="description.errors?.['required']">Description is required
               </div>
             </ng-container>
           </div>
 
           <!-- CLUB -->
           <div>
-            <label for="club">Rating</label>
-            <input ngModel #club="ngModel" type="text" name="rating" id="rating" placeholder="Rating" required />
+            <label for="rating">Rating</label>
+            <input ngModel #rating="ngModel" type="text" name="rating" id="rating" placeholder="9.9" required />
 
             <!-- CLUB ERRORS -->
-            <ng-container *ngIf="club.invalid && club.touched">
-              <div *ngIf="club.errors?.['required']">Rating is required
+            <ng-container *ngIf="rating.invalid && rating.touched">
+              <div *ngIf="rating.errors?.['required']">Rating is required
               </div>
             </ng-container>
           </div>

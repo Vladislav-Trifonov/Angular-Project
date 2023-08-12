@@ -1,10 +1,15 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
 
 html,
 body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
     height: 100%; 
+
+  
 }
 
+body, app-root {
+    margin: 0;
+    padding: 0;
+  }

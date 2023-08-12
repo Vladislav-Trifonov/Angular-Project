@@ -1,7 +1,7 @@
 .episodesSection {
   display: flex;
   flex-direction: column;
-  height: 93%;
+  height: 91.8%;
   background-image: url('/assets/dany.jpg');
   background-size: cover;
   background-position: center;
@@ -15,16 +15,16 @@
 }
 
 .episodesWrapper {
-  /* Add this */
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 
 .episodeTemplate {
-  width: 350px;
-  height: 400px;
+  width: 400px;
+  height: 350px;
   margin: 10px;
+  margin-left: 25px;
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -32,31 +32,20 @@
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.8);
+
 }
 
-/* Ensure the image scales properly within the "player card" */
 .episodeTemplate img {
   width: 100%;
-  /* Adjust to the width of the container */
   height: 200px;
-  /* Set a fixed height for all images */
   object-fit: cover;
-  /* To maintain aspect ratio and fill the container */
   border-radius: 8px;
-  margin-bottom: 10px;
-  /* Add some space between the image and content */
 }
-
-.episodeTemplate-content {
+.episodeTemplate .content {
   flex: 1;
-  /* Allow the content to take up remaining space */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.content {
-
   margin-top: auto;
 }
 
@@ -67,13 +56,13 @@
   color: #333;
 }
 
-.content p {
-  margin: 0;
+.episodeTemplate .content p {
   font-size: 14px;
   color: #666;
+  padding-top: 20px;
 }
 
-.content a {
+.episodeTemplate .content a {
   display: inline-block;
   padding: 8px 16px;
   background-color: #007bff;

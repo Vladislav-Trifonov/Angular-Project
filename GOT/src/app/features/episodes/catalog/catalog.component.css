@@ -1,7 +1,6 @@
-/* Apply Flexbox to the wrapper */
 .episodesSection {
   background-image: url('/assets/westeros.jpg');
-  height: 90.5%;
+  height: 91.8%;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -11,8 +10,8 @@
 }
 
 .episodeTemplate {
-  width: 350px;
-  height: 400px;
+  width: 400px;
+  height: 350px;
   margin: 10px;
   padding: 15px;
   border: 1px solid #ccc;
@@ -24,14 +23,10 @@
 
 }
 
-/* Styles for the image inside "episodeTemplate" */
 .episodeTemplate img {
   width: 100%;
-  /* Adjust to the width of the container */
   height: 200px;
-  /* Set a fixed height for all images */
   object-fit: cover;
-  /* To maintain aspect ratio and fill the container */
   border-radius: 8px;
 }
 .episodeTemplate .content {

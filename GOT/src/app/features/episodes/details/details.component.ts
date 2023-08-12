@@ -6,13 +6,13 @@ import { Observable, Subscription } from 'rxjs';
 import { EpisodeInterface } from 'src/app/core/interfaces/Episode';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { EpisodeService } from 'src/app/core/services/episodes.service';
-import { Modal, initTE } from 'tw-elements';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css'],
-})
+}) 
+
 export class DetailsComponent implements OnInit, OnDestroy {
   episode!: EpisodeInterface;
   subscribe$!: Subscription;
@@ -39,41 +39,32 @@ export class DetailsComponent implements OnInit, OnDestroy {
     this.userId = this.authService.getUserData()?._id as string;
     this.likes$ = this.EpisodeService.episodeTotalLikes(episodeId);
     this.canLike$ = this.EpisodeService.canLike(episodeId, this.userId);
-    initTE({ Modal });
+    
     
     this.subscribe$ = this.EpisodeService.getEpisodeById(episodeId).subscribe({
-      next: (playerData) => {
-        this.episode = playerData;
+      next: (episodeInfo) => {
+        this.episode = episodeInfo;
         this.titleService.setTitle(this.episode.name);
-        this.isOwner = playerData._ownerId == this.userId;
+        this.isOwner = episodeInfo._ownerId == this.userId;
       },
       error: (error) => this.errorMessage = error.error.message
     });
   }
 
-  deletePlayer(episodeId: string) {
+  removeEpisode(episodeId: string) {
       this.subscribe$ = this.EpisodeService.deleteEpisodeById(episodeId).subscribe({
         error: (error) => this.errorMessage = error.error.message,
         complete: () => this.router.navigate(['episodes'])
       });
   }
   
-  showModalFn(): void {
-    this.showModal = true;
-  }
-
-  closeModalFn(): void {
-    this.showModal = false;
-  }
-
-
-  likePlayer(episodeId: string) {
+  episodeLike(episodeId: string) {
     this.subscribe$ = this.EpisodeService.likeEpisodeById(episodeId).subscribe({
       error: (error) => this.errorMessage = error.error.message,
       complete: () => {
         this.canLike$ = this.EpisodeService.canLike(episodeId, this.userId);
         this.likes$ = this.EpisodeService.episodeTotalLikes(episodeId);
-        this.router.navigate(['/players', 'details', episodeId])
+        this.router.navigate(['/episodes', 'details', episodeId])
         
       },
     });

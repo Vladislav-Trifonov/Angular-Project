@@ -18,8 +18,8 @@
         </div>
 
         <ng-container *ngIf="episodes">
-            <ng-container *ngIf="episodes.length > 0; else noPlayers">
-                <div class="episodeContainer"> <!-- Add this div with class "episodeContainer" -->
+            <ng-container *ngIf="episodes.length > 0; else noEpisodes">
+                <div class="episodeContainer">
                     <ng-container *ngFor="let episode of episodes">
                         <div class="episodeTemplate">
                             <div>
@@ -32,7 +32,7 @@
                                 <p>
                                     Release Date: {{ episode.date }}
                                 </p>
-                                <a [routerLink]="['/players', 'details', episode._id]">
+                                <a [routerLink]="['/episodes', 'details', episode._id]">
                                     Details
                                 </a>
                             </div>
@@ -42,7 +42,7 @@
             </ng-container>
         </ng-container>
 
-        <ng-template #noPlayers>
+        <ng-template #noEpisodes>
             <h1 class="noEpisodes">
                 There are no episodes that match your search! Please try again. 
             </h1>

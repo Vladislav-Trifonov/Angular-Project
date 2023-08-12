@@ -8,7 +8,7 @@
 
   <div class="episodesWrapper">
   <ng-container *ngIf="episodes; else loading">
-    <ng-container *ngIf="episodes.length > 0; else noPlayers">
+    <ng-container *ngIf="episodes.length > 0; else noEpisodes">
       <ng-container *ngFor="let episode of episodes">
         
         <div class="episodeTemplate">
@@ -19,7 +19,7 @@
             <h5>Episode Name: {{ episode.name }}</h5>
             <div class="content">
               <p class="releaseDate">Release Date: {{ episode.date }}</p>
-              <a [routerLink]="['/players', 'details', episode._id]">Details</a>
+              <a [routerLink]="['/episodes', 'details', episode._id]">Details</a>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@
   </ng-container>
 </div>
 
-  <ng-template #noPlayers>
+  <ng-template #noEpisodes>
     <h1 class="noAdded">You still have not added any episodes. <a routerLink="/create">Add your first one here</a></h1>
   </ng-template>
 

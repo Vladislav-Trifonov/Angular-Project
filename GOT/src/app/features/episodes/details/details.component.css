@@ -1,6 +1,6 @@
 .wholeSection {
   width: 100%;
-  height: 90.5%;
+  height: 91.8%;
   background-image: url('/assets/details.png');
   background-size: cover;
   background-position: center;
@@ -8,7 +8,7 @@
 }
 
 .episodeCard {
-  max-width: 700px;  /* Make card slightly bigger */
+  max-width: 700px;  
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.8);
@@ -19,14 +19,14 @@
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 20px; /* Add padding */
+  padding: 20px; 
 }
 
 .episodeCard h5 {
   font-size: 24px;
   margin-bottom: 10px;
-  display: flex; /* Add flex */
-  justify-content: space-between; /* Align h5 and likes to left and right respectively */
+  display: flex; 
+  justify-content: space-between; 
 }
 
 .episodeCard img {
@@ -36,7 +36,7 @@
 }
 
 .episodeCard p {
-  margin-bottom: 10px; /* Add space between the text for 'episode name, release date, description, rating' */
+  margin-bottom: 10px; 
 }
 
 .ownerButtons a,
@@ -52,8 +52,8 @@
 }
 
 .ownerButtons {
-  display: flex; /* Add flex */
-  justify-content: space-between; /* Align Edit and Delete buttons to left and right respectively */
+  display: flex; 
+  justify-content: space-between;
 }
 
 .ownerButtons a:hover,

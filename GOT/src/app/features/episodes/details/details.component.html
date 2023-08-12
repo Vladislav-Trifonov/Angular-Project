@@ -4,7 +4,7 @@
 </div>
 
 <ng-container *ngIf="episode; else loading">
-  <!-- PLAYER CARD -->
+  
   <div class="episodeCard">
     <div>
       <img [src]="episode.image" [alt]="episode.name" />
@@ -23,23 +23,23 @@
         Rating: {{ episode.rating }}
       </p>
 
-      <!-- EDIT & DELETE BUTTONS -->
+   
       <ng-container *ngIf="isOwner">
         <div class="ownerButtons">
           <a [routerLink]="['/episodes', 'edit', episode._id]">
             Edit <i class="ml-2 fas fa-pen"></i>
           </a>
-          <a href="javascript:void(0)" (click)="deletePlayer(episode._id)" class="delete">
+          <a href="javascript:void(0)" (click)="removeEpisode(episode._id)" class="delete">
             Delete
           </a>
         </div>
       </ng-container>
 
-      <!-- LIKE & ALREADY LIKED BUTTONS -->
+    
       <ng-container *ngIf="!isOwner && isLogged">
         <div class="likeButtons">
           <div *ngIf="(canLike$ | async) == 0">
-            <a href="javascript:void(0)" (click)="likePlayer(episode._id)">
+            <a href="javascript:void(0)" (click)="episodeLike(episode._id)">
               Like
             </a>
           </div>
@@ -58,7 +58,6 @@
 </ng-container>
 
 
-<!-- LOADER -->
 <ng-template #loading>
   <app-loader></app-loader>
 </ng-template>

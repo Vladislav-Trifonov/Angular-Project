@@ -1,14 +1,12 @@
-/* Style for the container section */
-
 .bubble {
     background-image: url('/assets/king.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
     width: 100%;
-    height: 90.5%;
+    height: 91.8%;
     display: flex;
-    flex-direction: column; /* Added to stack the items vertically */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
 }
@@ -21,7 +19,6 @@
     height: 100vh;
   }
   
-  /* Style for the form wrapper */
   .create form {
     border: 1px solid #ccc;
     padding: 20px;
@@ -30,21 +27,18 @@
     background-color: #fff;
   }
   
-  /* Style for the header (h1 above the form) */
   .create h1 {
     font-weight: bold;
     color: #fff;
     font-size: 24px;
-    margin-bottom: 20px; /* Add some space between the h1 and the form */
+    margin-bottom: 20px; 
   }
   
-  /* Style for the labels */
   .create label {
     font-weight: bold;
-    color: black; /* Set the label color to black */
+    color: black;
   }
   
-  /* Style for the form inputs */
   .create input {
     width: 100%;
     padding: 8px;
@@ -54,14 +48,12 @@
     font-size: 14px;
   }
   
-  /* Style for the error messages */
   .create div * {
     color: black;
     font-size: 14px;
     margin-bottom: 10px;
   }
   
-  /* Style for the submit button */
   .create button {
     width: 100%;
     padding: 10px;
