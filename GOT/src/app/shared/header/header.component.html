@@ -1,0 +1,19 @@
+<header>
+  <nav>
+    <a routerLink="/">Home</a> 
+    <a routerLink="/episodes">Episodes</a>
+    <a routerLink="/search">Search</a>
+    <a routerLink="/questions">Quiz</a>
+    <ng-container *ngIf="isLogged">
+      <a routerLink="/create">Create</a>
+      <a routerLink="/profile">Profile</a>
+      <a (click)="logout()">Logout</a>
+    </ng-container>
+    <ng-container *ngIf="!isLogged">
+      <a routerLink="/login">Login</a>
+      <a routerLink="/register">Register</a>
+    </ng-container>
+  </nav>
+</header>
+
+

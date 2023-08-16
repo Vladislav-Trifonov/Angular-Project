@@ -1,0 +1,56 @@
+<div class="search">
+    <form #searchForm="ngForm" (submit)="searchHandler(searchForm)" class="searchBox">
+        <input class="searchInput"
+            ngModel
+            #search="ngModel"
+            type="search"
+            name="search"
+            placeholder="Episode name"/>
+
+        <button class="searchButton">
+            Search
+        </button>
+    </form>
+
+    <section class="searchSection">
+        <div class="error" *ngIf="errorMessage">
+            {{ errorMessage }}
+        </div>
+
+        <ng-container *ngIf="episodes">
+            <ng-container *ngIf="episodes.length > 0; else noEpisodes">
+                <div class="episodeContainer">
+                    <ng-container *ngFor="let episode of episodes">
+                        <div class="episodeTemplate">
+                            <div>
+                                <img src="{{ episode.image }}" alt="{{ episode.name }}" />
+                            </div>
+                            <div class="episodeTemplate-content">
+                                <h5>
+                                    Episode Name: {{ episode.name }}
+                                </h5>
+                                <p>
+                                    Release Date: {{ episode.date }}
+                                </p>
+                                <a [routerLink]="['/episodes', 'details', episode._id]">
+                                    Details
+                                </a>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </ng-container>
+
+        <ng-template #noEpisodes>
+            <h1 class="noEpisodes">
+                There are no episodes that match your search! Please try again. 
+            </h1>
+        </ng-template>
+
+        <ng-container *ngIf="isLoading">
+            <app-loader></app-loader>
+        </ng-container>
+    </section>
+</div>
+

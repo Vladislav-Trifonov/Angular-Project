@@ -1,0 +1,80 @@
+.logingClass {
+    background-image: url('/assets/loginV.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 91.8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logingClass h1 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.loginForm {
+    height: 40%;
+    width: 30%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.loginForm label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.loginForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.loginForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+.loginForm button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.register-link {
+    text-align: center;
+}
+
+.loginForm p>a {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.error {
+    font-size: 24px;
+    color: #ff0000;
+    font-weight: bold;
+}

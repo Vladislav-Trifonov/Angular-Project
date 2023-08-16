@@ -1,0 +1,64 @@
+<div class="wholeSection">
+<div class="error" *ngIf="errorMessage">
+  {{ errorMessage }}
+</div>
+
+<ng-container *ngIf="episode; else loading">
+  
+  <div class="episodeCard">
+    <div>
+      <img [src]="episode.image" [alt]="episode.name" />
+    </div>
+    <div>
+      <h5>
+        Episode Name: {{ episode.name }} <span class="likesCount">Likes: {{ likes$ | async }}</span>
+      </h5>
+      <p>
+        Release Date: {{ episode.date }}
+      </p>
+      <p>
+        Description: {{ episode.description }}
+      </p>
+      <p>
+        Rating: {{ episode.rating }}
+      </p>
+
+   
+      <ng-container *ngIf="isOwner">
+        <div class="ownerButtons">
+          <a [routerLink]="['/episodes', 'edit', episode._id]">
+            Edit <i class="ml-2 fas fa-pen"></i>
+          </a>
+          <a href="javascript:void(0)" (click)="removeEpisode(episode._id)" class="delete">
+            Delete
+          </a>
+        </div>
+      </ng-container>
+
+    
+      <ng-container *ngIf="!isOwner && isLogged">
+        <div class="likeButtons">
+          <div *ngIf="(canLike$ | async) == 0">
+            <a href="javascript:void(0)" (click)="episodeLike(episode._id)">
+              Like
+            </a>
+          </div>
+
+          <div *ngIf="(canLike$ | async) != 0">
+            <a href="javascript:void(0)">
+              You have already liked this episode!
+            </a>
+          </div>
+
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</ng-container>
+
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>
+</div>

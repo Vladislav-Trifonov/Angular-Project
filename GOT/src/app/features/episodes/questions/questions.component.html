@@ -1,0 +1,12 @@
+<div class="quiz-container">
+    <div class="question-container">
+        <h3>{{ questions[currentQuestionIndex].question }}</h3>
+        <div *ngFor="let option of questions[currentQuestionIndex].options; let j = index" class="option-container">
+            <button [ngClass]="getAnswerClass(j)" (click)="selectAnswer(j)" [disabled]="isAnswerSelected()">{{ option }}</button>
+        </div>
+    </div>
+    <button *ngIf="currentQuestionIndex < questions.length - 1" (click)="nextQuestion()">Next</button>
+    <div class="score-container">
+        Correct Answers: {{ correctAnswersCount }} / {{ questions.length }}
+    </div>
+</div>

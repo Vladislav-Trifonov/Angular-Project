@@ -1,0 +1,44 @@
+<div class="registerClass">
+  <h1>Start your journey here</h1>
+  <form class="registerForm" #registerForm="ngForm" (ngSubmit)="registerMethod(registerForm)">
+
+    <div>
+      <label for="email">Email address</label>
+      <input ngModel #email="ngModel" name="email" id="email" autofocus placeholder="username@gmail.com" required pattern="^[a-zA-Z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$" />
+
+      <ng-container *ngIf="email.invalid && email.touched">
+        <div *ngIf="email.errors?.['required']">Email is required </div>
+        <div *ngIf="email.errors?.['pattern']">Email must be in format username@gmail.com</div>
+      </ng-container>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input ngModel #password="ngModel" type="password" name="password" id="password" placeholder="******" required minlength="6" />
+     
+      <ng-container *ngIf="password.invalid && password.touched">
+        <div *ngIf="password.errors?.['required']">Password is required</div>
+        <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long</div>
+      </ng-container>
+    </div>
+    
+    <div>
+      <label for="repassword">Confirm password</label>
+      <input ngModel #repassword="ngModel" type="password" name="repassword" id="repassword" placeholder="******" required minlength="6" />
+
+      <ng-container *ngIf="!password.invalid || (repassword.invalid && repassword.touched)">
+        <div *ngIf="repassword.errors?.['required']">Confirm password is required</div>
+        <div *ngIf="repassword.errors?.['minlength']">Confirm password must be at least 6 characters long</div>
+        <div *ngIf="password.value != repassword.value">Passwords don't match</div>
+      </ng-container>
+    </div>
+
+    <button [disabled]="registerForm.invalid || password.value != repassword.value" type="submit">Sign up</button>
+
+    <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+    <p>Already have an account?
+      <a routerLink="/login">Sign in</a>
+    </p>
+  </form>
+</div>

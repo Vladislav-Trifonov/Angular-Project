@@ -1,0 +1,77 @@
+<div class="bubble">
+
+<section class="create">
+
+        <h1>Add an episode</h1>
+        
+        <form #createForm="ngForm" (ngSubmit)="createMethod(createForm)" class="createForm">
+
+          
+          <div>
+            <label for="name">Episode Name</label>
+            <input ngModel #name="ngModel" name="name" id="name" autofocus placeholder="The Long Night" required min="4" />
+
+            
+            <ng-container *ngIf="name.invalid && name.touched">
+              <div *ngIf="name.errors?.['required']">Name is required
+              </div>
+              <div *ngIf="name.errors?.['min']">Name must be at least 4 characters long
+              </div>
+            </ng-container>
+          </div>
+
+          <div>
+            <label for="image">Image</label>
+            <input ngModel #image="ngModel" type="text" name="image" id="image" placeholder="Image URL" required>
+
+          
+            <ng-container *ngIf="image.invalid && image.touched">
+              <div *ngIf="image.errors?.['required']">Image is required
+              </div>
+            </ng-container>
+          </div>
+
+         
+          <div>
+            <label for="date">Release Date</label>
+            <input ngModel #date="ngModel" type="text" name="date" id="date" placeholder="DD/MM/YYYY" required />
+
+          
+            <ng-container *ngIf="date.invalid && date.touched">
+              <div *ngIf="date.errors?.['required']">Release date is required
+              </div>
+            </ng-container>
+          </div>
+
+          <div>
+            <label for="description">Description</label>
+            <input ngModel #description="ngModel" type="text" name="description" id="description" list="description"
+              placeholder="One of the best episodes ever" required />
+
+      
+            <ng-container *ngIf="description.invalid && description.touched">
+              <div *ngIf="description.errors?.['required']">Description is required
+              </div>
+            </ng-container>
+          </div>
+
+          <div>
+            <label for="rating">Rating</label>
+            <input ngModel #rating="ngModel" type="text" name="rating" id="rating" placeholder="9.9" required />
+
+            <ng-container *ngIf="rating.invalid && rating.touched">
+              <div *ngIf="rating.errors?.['required']">Rating is required
+              </div>
+            </ng-container>
+          </div>
+
+          <button [disabled]="createForm.invalid" type="submit">Add
+          </button>
+
+          <div *ngIf="errorMessage">{{ errorMessage }}
+          </div>
+        </form>
+
+</section>
+
+</div>
